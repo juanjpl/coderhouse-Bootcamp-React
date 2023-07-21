@@ -1,0 +1,15 @@
+.boton-carrito {
+  display: flex;
+  flex-direction: row;
+  padding-right: 1em;
+}
+
+.icono-carrito {
+  width: 40px;
+}
+
+.carrito-numero {
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
+}

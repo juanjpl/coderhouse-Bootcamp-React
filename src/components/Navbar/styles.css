@@ -9,11 +9,13 @@
   width: 100vw;
   height: max-content;
   background-color: #ffffff;
-  border: 1px solid black;
+
 }
 
 .brand {
-  border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .brand > h1 {
   font-family: "Roboto", sans-serif;
@@ -21,19 +23,25 @@
   color: rgb(64, 64, 136);
   font-weight: 600;
   padding: 0 2rem;
+  margin:auto 0;
 }
 
 .botonera {
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
+  padding:0;
+
 }
 
 .botonera > button {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
-  margin: auto 1.5em;
-  height: 30px;
+  margin: auto 1em;
   background-color: transparent;
   border: none;
+  padding:0;
+}
+
+.cartwidget{
+  width: 200px;
 }

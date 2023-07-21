@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: max-content;
+  background-color: #ffffff;
+  border: 1px solid black;
+}
+
+.brand {
+  border: 1px solid black;
+}
+.brand > h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: rgb(64, 64, 136);
+  font-weight: 600;
+  padding: 0 2rem;
+}
+
+.botonera {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+
+.botonera > button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  margin: auto 1.5em;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+}

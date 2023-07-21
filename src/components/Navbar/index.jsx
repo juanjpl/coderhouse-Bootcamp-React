@@ -14,7 +14,7 @@ function Navbar() {
         <button>ABOUT US</button>
         <button>CONTACT</button>
       </div>
-      <div>
+      <div className="cartwidget">
         <CartWidget/>
       </div>
     </div>

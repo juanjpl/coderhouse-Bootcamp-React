@@ -1,13 +1,20 @@
 import "./styles.css";
+import { useState } from "react";
 
-function ItemListContainer(props) {
-  const texto = props.name;
-  const saludos = props.saludo;
+function ItemListContainer({saludo}) {
+    const [saludos, setSaludos] = useState(saludo);
+ 
+
+  function changeGreeting(){
+    setSaludos ('Bye World!');
+  }
 
   return (
     <div className="item-list-container">
-      <p>{texto}</p>
-      <p>{saludos} </p>
+      <p>{saludos}</p>
+  
+      <button className="boton-click" onClick={changeGreeting}>Press Me</button>
+
     </div>
   );
 }

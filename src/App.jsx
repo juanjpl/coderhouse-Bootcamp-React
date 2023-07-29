@@ -23,7 +23,7 @@ console.log('Actualizando cantidad productos en carrito !');
 <div>
   <p>carrito: {n_productos} </p>
 </div>
-<ItemCounter stock={stock} onAdd={onAdd} addStock={setStock} />
+<ItemCounter stock={stock} onAdd={onAdd}  />
 </>
   )
 

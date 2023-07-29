@@ -20,7 +20,7 @@ function ItemCounter({stock, onAdd}){
           <button disabled={count <= 1} onClick={() => setCount((count) => count - 1)}>
            Decrement
           </button>
-          <button  disabled={stock<=0} onClick={() => onAdd(count)}>
+          <button  disabled={stock<=0} onClick={() =>{ onAdd(count);setCount(1)}}>
            Agregar al carrito
           </button>
         </div>

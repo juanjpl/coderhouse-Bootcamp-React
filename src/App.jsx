@@ -66,7 +66,7 @@ useEffect(()=>{
         <p>:</p>
         <div className="section">
         <p className='hour'>{timerMinutes}</p>
-       <p>minutos</p>
+       <p>minuts</p>
         </div>
         <p>:</p>
         <div className="section">

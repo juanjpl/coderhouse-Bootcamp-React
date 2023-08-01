@@ -40,7 +40,22 @@ async function mostrarProductos(){
 console.log(mostrarProductos())
 */
 
+const obtenerData = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+  const data = await response.json()
+ 
+ console.log(data)
+}
+
+setTimeout(() => {
+  obtenerData()
+}, 5000);
+
+
+
+
 async function mostrarPokemon(){
+  
   setLoading(true);
   const result = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
 
@@ -49,6 +64,7 @@ async function mostrarPokemon(){
 }
 
 useEffect(()=>{
+
   mostrarPokemon()
   .then((response)=>response.json())
   .then((data)=>setPokemons(data.results))

@@ -6,6 +6,13 @@ const App = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
 
+  /*
+  console.log(fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+  .then((response)=> response.json))
+  .then((data)=> data)
+  .catch((error)=>console.log(error))
+  */
+
   useEffect(() => {
     const fetchPokemones = async () => {
       try {

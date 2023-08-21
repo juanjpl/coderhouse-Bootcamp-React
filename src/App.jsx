@@ -1,10 +1,13 @@
-
-import { useEffect, useState } from 'react';
-import './app.css';
+import { useEffect, useState } from "react";
+import data from "./data/data.js";
+import Spinner from "../components/spinner/spinner.jsx";
+import Navbar from "../components/navbar/Navbar.jsx";
+import ItemListContainer from "../components/itemListContainer/ItemListContainer.jsx";
+import "./app.css";
 
 const App = () => {
-  const [pokemonList, setPokemonList] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+  const [products, setProducts] = useState([]);
 
   /*
   console.log(fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
@@ -14,38 +17,40 @@ const App = () => {
   */
 
   useEffect(() => {
-    const fetchPokemones = async () => {
+    const getProducts = () => {
       try {
-        const response = await fetch(
-          'https://pokeapi.co/api/v2/pokemon?limit=10'
-        );
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setPokemonList(data.results);
-        setTimeout(() => setShowLoading(false), 3000); // 3 segundos de delay
+         setProducts(data);
+         setTimeout(() => setShowLoading(false), 3000); // 3 segundos de delay
+        ;
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
         setShowLoading(false);
       }
     };
-
-    fetchPokemones();
+   
+    getProducts();
   }, []);
 
   return (
-    <div>
+    <div className="app-contenedor">
+      <Navbar/>
       {showLoading ? (
-        <h1>Esperando...</h1>
+        <Spinner />
       ) : (
-        <div>
-          <ul>
-            {pokemonList.map((pokemon) => (
-              <li key={pokemon.name}>{pokemon.name}</li>
-            ))}
-          </ul>
+        <div className="contenedor-productos">
+      
+            {!products 
+            ? (
+              <li>'No hay productos para mostrar'</li>
+            ) 
+            : (
+              <ItemListContainer products={products}/>
+             
+            )}
+      
+         
         </div>
+        
       )}
     </div>
   );

@@ -9,8 +9,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
+import {Link} from 'react-router-dom';
+
 const ItemList = ({ product }) => {
   return (
+
     <Grid item key={product.id} xs={12} sm={6} md={4}>
       <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <CardMedia
@@ -29,7 +32,10 @@ const ItemList = ({ product }) => {
         </CardContent>
         <CardActions>
           <Button size="small">{product.price} </Button>
+          <Link to={`/detail/${product.id}`}>
           <Button size="small">Buy</Button>
+          </Link>
+          
         </CardActions>
       </Card>
     </Grid>

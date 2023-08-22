@@ -1,58 +1,34 @@
-import { useEffect, useState } from "react";
-import data from "./data/data.js";
-import Spinner from "../components/spinner/spinner.jsx";
 import Navbar from "../components/navbar/Navbar.jsx";
-import ItemListContainer from "../components/itemListContainer/ItemListContainer.jsx";
 import "./app.css";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "../components/pages/home/Home.jsx";
+import About from "../components/pages/about/About.jsx";
+import Contact from "../components/pages/contact/Contact.jsx";
+import Error from "../components/pages/error/Error.jsx";
+import DetailPage from "../components/pages/detailPage/DetailPage.jsx";
+import CategoryPage from '../components/pages/categoryPage/CategoryPage.jsx'
+
 const App = () => {
-  const [showLoading, setShowLoading] = useState(true);
-  const [products, setProducts] = useState([]);
 
-  /*
-  console.log(fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
-  .then((response)=> response.json))
-  .then((data)=> data)
-  .catch((error)=>console.log(error))
-  */
-
-  useEffect(() => {
-    const getProducts = () => {
-      try {
-         setProducts(data);
-         setTimeout(() => setShowLoading(false), 3000); // 3 segundos de delay
-        ;
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setShowLoading(false);
-      }
-    };
-   
-    getProducts();
-  }, []);
 
   return (
-    <div className="app-contenedor">
-      <Navbar/>
-      {showLoading ? (
-        <Spinner />
-      ) : (
-        <div className="contenedor-productos">
+    <Router>
+      <div className="app-contenedor">
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/contact" element={<Contact/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
+          <Route path="/detail/:id" element={<DetailPage/>}></Route>
+          <Route path="/category/:species" element={<CategoryPage/>}></Route>
+          <Route path="/*" element={<Error/>}></Route>
+        </Routes>
       
-            {!products 
-            ? (
-              <li>'No hay productos para mostrar'</li>
-            ) 
-            : (
-              <ItemListContainer products={products}/>
-             
-            )}
-      
-         
-        </div>
-        
-      )}
-    </div>
+      </div>
+    </Router>
   );
 };
 

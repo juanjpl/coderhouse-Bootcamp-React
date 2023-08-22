@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 const ItemListContainer = ({ products }) => {
   console.log(products);
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" className="item-list-container">
       <Container sx={{ py: 8 }} maxWidth="md">
         <Grid container spacing={4}>
           {products.map((product) => (

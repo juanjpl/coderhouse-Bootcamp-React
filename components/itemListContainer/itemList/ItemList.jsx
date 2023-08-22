@@ -11,16 +11,18 @@ import Typography from "@mui/material/Typography";
 
 import {Link} from 'react-router-dom';
 
+
+
 const ItemList = ({ product }) => {
   return (
 
-    <Grid item key={product.id} xs={12} sm={6} md={4}>
+    <Grid item key={product.id} xs={12} sm={6} md={4} className="margen">
       <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <CardMedia
           component="div"
           sx={{
             // 16:9
-            pt: "56.25%",
+            pt: "120%",
           }}
           image={`../../../src/assets/images/${product.id}.jpg`}
         />
@@ -28,7 +30,7 @@ const ItemList = ({ product }) => {
           <Typography gutterBottom variant="h5" component="h2">
             {product.producto}
           </Typography>
-          <Typography>{product.descripcion}</Typography>
+       
         </CardContent>
         <CardActions>
           <Button size="small">{product.price} </Button>

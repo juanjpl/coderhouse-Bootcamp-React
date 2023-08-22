@@ -12,23 +12,25 @@ import Typography from "@mui/material/Typography";
 import {Link} from 'react-router-dom';
 
 const ItemDetail = ({ detail }) => {
+
   return (
 
     <Grid item key={detail.id} xs={12} sm={6} md={4}>
       <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+   
         <CardMedia
           component="div"
           sx={{
             // 16:9
-            pt: "56.25%",
+            pt: "120%",
           }}
-          image={`../../../src/assets/images/${detail.id}.jpg`}
+          image={`../../../src/assets/images/${detail[0].id}.jpg`}
         />
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="h2">
-            {detail.producto}
+            {detail[0].producto}
           </Typography>
-          <Typography>{detail.descripcion}</Typography>
+          <Typography>{detail[0].descripcion}</Typography>
         </CardContent>
         <CardActions>
           <Button size="small">{detail.price} </Button>

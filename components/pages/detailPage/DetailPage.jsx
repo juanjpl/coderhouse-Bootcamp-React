@@ -1,6 +1,6 @@
 import styles from './styles.css';
+import Spinner from '../../spinner/spinner.jsx'
 import data from '../../../src/data/data.js'
-
 import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetailContainer from '../../itemdetailContainer/ItemDetailContainer';
@@ -10,10 +10,14 @@ const DetailPage = ()=>{
     const[productDetail, setProductDetail] = useState([])
 
     const {id}=useParams();
+
+
+  
+
     useEffect(() => {
         const getProductDetail = () => {
           try {
-            const detail = data.filter((data.id === id));
+            const detail = data.filter((dato)=>dato.id==id);
             console.log(detail)
             setProductDetail(detail);
             setTimeout(() => setShowLoading(false), 3000); // 3 segundos de delay
@@ -33,9 +37,10 @@ const DetailPage = ()=>{
       <Spinner />
     ) : (
       <div className="contenedor-productos">
-        {!products ? (
+        {!productDetail ? (
           <li>'No se encontró el producto'</li>
         ) : (
+          
             <ItemDetailContainer detail={productDetail} />
          
         )}

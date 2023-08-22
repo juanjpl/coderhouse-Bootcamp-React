@@ -5,7 +5,7 @@ import Spinner from "../../spinner/spinner.jsx";
 import ListCategoryContainer from "../../listCategoryContainer/ListCategoryContainer.jsx";
 
 
-const Home = ()=>{
+const CategoryPage = ()=>{
     const [showLoading, setShowLoading] = useState(true);
   const [products, setProducts] = useState([]);
 
@@ -47,4 +47,4 @@ let filterCategories = products.filter((product)=>{
     )
 }
 
-export default Home;
+export default CategoryPage;

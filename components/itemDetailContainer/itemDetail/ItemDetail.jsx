@@ -31,11 +31,13 @@ const ItemDetail = ({ detail }) => {
             {detail[0].producto}
           </Typography>
           <Typography>{detail[0].descripcion}</Typography>
+          <Typography>Categoria: {detail[0].category}</Typography>
+          <Typography>Precio: {detail[0].price}</Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">{detail.price} </Button>
+         
           <Link to={`/detail/home`}>
-          <Button size="small">Shop</Button>
+          <Button size="small">Agregar al carrito</Button>
           </Link>
           
         </CardActions>

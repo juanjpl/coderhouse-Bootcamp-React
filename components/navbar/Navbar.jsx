@@ -98,6 +98,7 @@ function Navbar() {
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
+              
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -121,7 +122,7 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link key={page} to={`/${page}`}>
+              <Link key={page} to={`/${page}` }>
                <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -132,6 +133,24 @@ function Navbar() {
               </Link>
              
             ))}
+             <Link key={'invierno'} to={`/category/invierno` }>
+               <Button
+                key={'invierno'}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {'Invierno'}
+              </Button>
+              </Link>
+              <Link key={'verano'} to={`/category/verano` }>
+               <Button
+                key={'verano'}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {'Verano'}
+              </Button>
+              </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

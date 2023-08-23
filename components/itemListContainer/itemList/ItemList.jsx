@@ -30,6 +30,9 @@ const ItemList = ({ product }) => {
           <Typography gutterBottom variant="h5" component="h2">
             {product.producto}
           </Typography>
+          <Typography gutterBottom variant="h6" component="h6">
+            {product.category}
+          </Typography>
        
         </CardContent>
         <CardActions>

@@ -1,49 +1,52 @@
-import { useEffect, useState } from "react";
+import styles from './styles.css';
+import Spinner from '../../spinner/spinner.jsx'
+import data from '../../../src/data/data.js'
+import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
-import data from "../../../src/data/data.js";
-import Spinner from "../../spinner/spinner.jsx";
-import ListCategoryContainer from "../../listCategoryContainer/ListCategoryContainer.jsx";
-
+import ItemCategoryContainer from '../../itemCategoryContainer/ItemCategoryContainer.jsx'
 
 const CategoryPage = ()=>{
     const [showLoading, setShowLoading] = useState(true);
-  const [products, setProducts] = useState([]);
+    const[productDetail, setProductDetail] = useState([])
 
-  const {species} = useParams();
+    const {categories}=useParams();
+console.log(categories)
 
-  useEffect(() => {
-    const getProducts = () => {
-      try {
-let filterCategories = products.filter((product)=>{
-    return products.category === species
-})
-        setProducts(filterCategories);
-        setTimeout(() => setShowLoading(false), 3000); // 3 segundos de delay
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setShowLoading(false);
-      }
-    };
+  
 
-    getProducts();
-  }, []);
-
+    useEffect(() => {
+        const getProductDetail = () => {
+          try {
+            const detail = data.filter((dato)=>dato.category==categories);
+            console.log(detail)
+            setProductDetail(detail);
+            setTimeout(() => setShowLoading(false), 3000); // 3 segundos de delay
+          } catch (error) {
+            console.error("Error fetching data:", error);
+            setShowLoading(false);
+          }
+        };
+    
+        getProductDetail();
+      }, []);
+  
 
     return(
         <>
-            {showLoading ? (
-          <Spinner />
+        {showLoading ? (
+      <Spinner />
+    ) : (
+      <div className="contenedor-productos">
+        {!productDetail ? (
+          <li>'No se encontró el producto'</li>
         ) : (
-          <div className="contenedor-productos">
-            {!products ? (
-              <li>'No hay productos para mostrar'</li>
-            ) : (
-              <ListCategoryContainer products={products} />
-            )}
-          </div>
+          
+            <ItemCategoryContainer detail={productDetail} />
+         
         )}
-        </>
-      
+      </div>
+    )}
+ </>
     )
 }
 

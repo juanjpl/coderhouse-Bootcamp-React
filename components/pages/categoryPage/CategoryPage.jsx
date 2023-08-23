@@ -28,7 +28,7 @@ console.log(categories)
         };
     
         getProductDetail();
-      }, []);
+      }, [categories]);
   
 
     return(

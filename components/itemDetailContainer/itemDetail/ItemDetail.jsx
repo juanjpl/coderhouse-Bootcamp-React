@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 
 import {Link} from 'react-router-dom';
 
-const ItemDetail = ({ detail }) => {
+const ItemDetail = ({ detail ,agregarCarrito}) => {
 
   return (
 
@@ -37,7 +37,7 @@ const ItemDetail = ({ detail }) => {
         <CardActions>
          
           <Link to={`/detail/home`}>
-          <Button size="small">Agregar al carrito</Button>
+          <Button size="small" onClick={()=>agregarCarrito(1)}>Agregar al carrito</Button>
           </Link>
           
         </CardActions>

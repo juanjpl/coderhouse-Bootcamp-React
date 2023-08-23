@@ -5,7 +5,7 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 
-const ItemDetailContainer = ({detail})=>{
+const ItemDetailContainer = ({detail , agregarCarrito})=>{
 
 
 
@@ -15,7 +15,7 @@ const ItemDetailContainer = ({detail})=>{
           <Grid container spacing={4}>
  
 
-              <ItemDetail key={detail.id} detail={detail} />
+              <ItemDetail key={detail.id} detail={detail} agregarCarrito={agregarCarrito} />
             
           </Grid>
         </Container>

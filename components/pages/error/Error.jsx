@@ -5,14 +5,14 @@ const Error = ()=>{
 
     const navigate = useNavigate();
 
+   useEffect(() => {
+    setTimeout(() => {
+        navigate('/')
+    }, 3000);
+   }, [navigate])
    
 
-    useEffect=()=>{
-
-        setTimeout(() => {
-            navigate('/')
-        }, 4000);
-    },[navigate];
+  
 
 
     return(

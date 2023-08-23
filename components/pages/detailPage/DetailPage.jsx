@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetailContainer from '../../itemdetailContainer/ItemDetailContainer';
 
-const DetailPage = ()=>{
+const DetailPage = ({agregarCarrito})=>{
     const [showLoading, setShowLoading] = useState(true);
     const[productDetail, setProductDetail] = useState([])
 
@@ -41,7 +41,7 @@ const DetailPage = ()=>{
           <li>'No se encontró el producto'</li>
         ) : (
           
-            <ItemDetailContainer detail={productDetail} />
+            <ItemDetailContainer detail={productDetail} agregarCarrito={agregarCarrito} />
          
         )}
       </div>

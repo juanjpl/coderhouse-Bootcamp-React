@@ -15,7 +15,7 @@ const ItemCategoryContainer =({detail})=>{
           <Grid container spacing={4}>
        
 {
-    detail.map((product,index)=>( 
+    detail.map((product)=>( 
         <ItemList key={product.id} product={product} />
        
     ))

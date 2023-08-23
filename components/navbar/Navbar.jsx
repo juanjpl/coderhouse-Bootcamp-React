@@ -10,16 +10,26 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
+
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from 'react-router-dom';
 
+
+
+
+
+
+import Badge from '@mui/material/Badge';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
 const pages = ['Home', 'Shop', 'About','Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function Navbar() {
+function Navbar({carrito}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -102,6 +112,7 @@ function Navbar() {
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+        
           <Typography
             variant="h5"
             noWrap
@@ -151,6 +162,14 @@ function Navbar() {
                 {'Verano'}
               </Button>
               </Link>
+              <MenuItem>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={carrito} color="error">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconButton>
+        
+      </MenuItem>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -180,7 +199,9 @@ function Navbar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
+              
             </Menu>
+            
           </Box>
         </Toolbar>
       </Container>

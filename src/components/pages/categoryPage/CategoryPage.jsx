@@ -1,6 +1,6 @@
 import styles from "./styles.css";
 import Spinner from "../../spinner/spinner.jsx";
-import data from "../../../src/data/data.js";
+import data from "../../../data/data.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemCategoryContainer from '../../itemCategoryContainer/ItemCategoryContainer.jsx';

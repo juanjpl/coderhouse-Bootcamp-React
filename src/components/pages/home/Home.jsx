@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import data from "../../../src/data/data.js";
+import data from "../../../data/data.js";
 import Spinner from "../../spinner/spinner.jsx";
 import ItemListContainer from "../../itemListContainer/ItemListContainer.jsx";
 

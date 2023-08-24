@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import data from "../../../data/data.js";
-import Spinner from "../../spinner/spinner.jsx";
-import ItemListContainer from "../../itemListContainer/ItemListContainer.jsx";
+import data from "../../data/data.js";
+import Spinner from "../../components/spinner/spinner.jsx";
+import ItemListContainer from "../../components/itemListContainer/ItemListContainer.jsx";
 
 
 const Home = ()=>{
